@@ -8,21 +8,19 @@ namespace VikingNotes.Controllers
     public class QuizsController : Controller
     {
         // Getting list of genres from the database
-        private ApplicationDbContext _Context { get; set; }
+        private ApplicationDbContext Context { get; set; }
 
         public QuizsController()
         {
-            _Context = new ApplicationDbContext();
+            Context = new ApplicationDbContext();
         }
 
 
-
-        // GET: Quizs
         public ActionResult Create()
         {
             var viewModel = new QuizFormViewModel
             {
-                Genres = _Context.Genres.ToList()
+                Genres = Context.Genres.ToList()
             };
 
             return View(viewModel);

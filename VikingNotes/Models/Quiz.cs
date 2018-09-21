@@ -5,7 +5,7 @@ namespace VikingNotes.Models
 {
     public class Quiz
     {
-        public int ID { get; set; } // unique id
+        public int Id { get; set; } // unique id
 
         // assoiciating the user with the AplicationUser class that represents the VikingNotes
         [Required]

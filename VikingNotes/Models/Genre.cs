@@ -6,7 +6,7 @@ namespace VikingNotes.Models
     {
         //[ScaffoldColumn(false)]
         //[DatabaseGenerated(DatabaseGeneratedOption.Identity)]
-        public int ID { get; set; }
+        public int Id { get; set; }
 
         [Required]
         [StringLength(255)]
