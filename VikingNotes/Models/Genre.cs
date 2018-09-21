@@ -4,6 +4,8 @@ namespace VikingNotes.Models
 {
     public class Genre
     {
+        //[ScaffoldColumn(false)]
+        //[DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int ID { get; set; }
 
         [Required]

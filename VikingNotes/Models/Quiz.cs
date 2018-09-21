@@ -11,7 +11,8 @@ namespace VikingNotes.Models
         [Required]
         public ApplicationUser Student { get; set; } // Who is performing it
 
-        [Required, StringLength(Int32.MaxValue)]
+        [Required]
+        [StringLength(Int32.MaxValue)]
         public string Description { get; set; } // Quiz Description text
 
         public DateTime DateTime { get; set; } // when is it happening
