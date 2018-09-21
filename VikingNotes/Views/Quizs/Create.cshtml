@@ -1,0 +1,48 @@
+﻿@model VikingNotes.ViewModels.QuizFormViewModel
+@{
+    ViewBag.Title = "Create";
+    Layout = "/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Create</h2>
+<form>
+    <div class="form-group">
+        @Html.LabelFor(m=> m.Title)
+        @Html.TextBoxFor(m=>m.Title, new{@class ="form-control"})
+    </div> 
+    
+    <div class="form-group">
+        @Html.LabelFor(m=> m.Author)
+        @Html.TextBoxFor(m=>m.Author, new{@class ="form-control"})
+    </div>
+    
+    <div class="form-group">
+        @Html.LabelFor(m=> m.Genre)
+        @Html.DropDownListFor(m=>m.Genre, new SelectList(Model.Genres,"ID","Name") , " " , new { @class = "form-control"})
+        <!-- After adding selectList and running the code, an exception is thrown
+        Fix: in the QuizController.cs need to populate from the DbContext and adding the genre 
+        from the ViewModel to the list. 2. Need to add a blank string " " for the blank 1st item
+        the 4th argument is a html attribut to class-->
+    </div>
+    
+    <div class="form-group">
+        @Html.LabelFor(m=> m.Date)
+        @Html.TextBoxFor(m=>m.Date, new{@class ="form-control"})
+    </div>
+    
+    <div class="form-group">
+        @Html.LabelFor(m=> m.Time)
+        @Html.TextBoxFor(m=>m.Time, new{@class ="form-control"})
+    </div>
+    
+    <button type="submit"  class="btn btn-primary">Save</button>
+  
+</form>
+
+
+
+
+  
+ 
+       
+ 

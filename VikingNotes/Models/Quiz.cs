@@ -9,7 +9,10 @@ namespace VikingNotes.Models
 
         // assoiciating the user with the AplicationUser class that represents the VikingNotes
         [Required]
-        public ApplicationUser Student { get; set; } // Who is performing it
+        public ApplicationUser Author { get; set; } // Who is performing it
+
+        [Required]
+        public string Title { get; set; }
 
         [Required]
         [StringLength(Int32.MaxValue)]
