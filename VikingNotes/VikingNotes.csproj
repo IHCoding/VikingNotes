@@ -200,9 +200,29 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201809211550417_InitialMigration.cs" />
+    <Compile Include="Migrations\201809211550417_InitialMigration.Designer.cs">
+      <DependentUpon>201809211550417_InitialMigration.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201809211616458_CreateQuizTable.cs" />
+    <Compile Include="Migrations\201809211616458_CreateQuizTable.Designer.cs">
+      <DependentUpon>201809211616458_CreateQuizTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201809211631106_OverrideConventionQuizsGenres.cs" />
+    <Compile Include="Migrations\201809211631106_OverrideConventionQuizsGenres.Designer.cs">
+      <DependentUpon>201809211631106_OverrideConventionQuizsGenres.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201809211633440_OverrideConventionQuizsGenres1.cs" />
+    <Compile Include="Migrations\201809211633440_OverrideConventionQuizsGenres1.Designer.cs">
+      <DependentUpon>201809211633440_OverrideConventionQuizsGenres1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
-    <Compile Include="Models\IdentityModels.cs" />
+    <Compile Include="Models\ApplicationDbContext.cs" />
+    <Compile Include="Models\Genre.cs" />
+    <Compile Include="Models\ApplicationUser.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\Quiz.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -281,6 +301,20 @@
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.3.1.min.map" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201809211550417_InitialMigration.resx">
+      <DependentUpon>201809211550417_InitialMigration.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809211616458_CreateQuizTable.resx">
+      <DependentUpon>201809211616458_CreateQuizTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809211631106_OverrideConventionQuizsGenres.resx">
+      <DependentUpon>201809211631106_OverrideConventionQuizsGenres.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809211633440_OverrideConventionQuizsGenres1.resx">
+      <DependentUpon>201809211633440_OverrideConventionQuizsGenres1.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
