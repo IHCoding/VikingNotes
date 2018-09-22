@@ -229,6 +229,10 @@
     <Compile Include="Migrations\201809212206431_RenamingIDContext.Designer.cs">
       <DependentUpon>201809212206431_RenamingIDContext.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201809221121412_AddFKPropertiesQuiz.cs" />
+    <Compile Include="Migrations\201809221121412_AddFKPropertiesQuiz.Designer.cs">
+      <DependentUpon>201809221121412_AddFKPropertiesQuiz.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\ApplicationDbContext.cs" />
@@ -338,6 +342,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201809212206431_RenamingIDContext.resx">
       <DependentUpon>201809212206431_RenamingIDContext.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201809221121412_AddFKPropertiesQuiz.resx">
+      <DependentUpon>201809221121412_AddFKPropertiesQuiz.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

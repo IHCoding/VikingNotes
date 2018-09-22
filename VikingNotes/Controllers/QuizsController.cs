@@ -31,27 +31,18 @@ namespace VikingNotes.Controllers
         }
 
 
-        // Implementing the Create action for the Target form in the Create.cshtml
+        
         [Authorize, HttpPost] // httpPost to prompt this action being called only by a httpPost method
-
+                // Implementing the Create action for the Target form in the Create.cshtml
         public ActionResult Create(QuizFormViewModel viewModel) // takes parameter of QuizFormViewModel -- the model behind the view. When posting the form will result this action
         {
-            // Step 1: // getting an ApplicationUser object to set the user logged in from the database
-            // returns an application user object that can be associated with this Quiz.
-            var userId = User.Identity.GetUserId(); // passing this variable to the argument will be numeric value. It is easy for the EF to translate it to sql.
-            var author = Context.Users.Single(u => u.Id == userId);
-
-            // Step 2: // similarly need to read the genre from the database like the author/users.
-            // get the genres, whose id is viewModel. It's an int type.
-            var genre = Context.Genres.Single(g => g.Id == viewModel.Genre);
-
-            // quiz object
-            var quiz = new Quiz // creating new Quiz object and converting it to the viewModel object
+                 // creating new Quiz object and converting it to the viewModel object
+            var quiz = new Quiz
             {
-                // need to set the author, need an applicationUser object
-                Author = author,
+                 // need to set the authorId, need an applicationUser object
+                AuthorId = User.Identity.GetUserId(),
                 DateTime = DateTime.Parse(string.Format("{0} {1}", viewModel.Date, viewModel.Time)),
-                Genre = genre,
+                GenreId = viewModel.Genre,
                 Title = viewModel.Title,
                 Description = viewModel.Description
             };
