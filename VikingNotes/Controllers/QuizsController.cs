@@ -41,7 +41,7 @@ namespace VikingNotes.Controllers
             {
                  // need to set the authorId, need an applicationUser object
                 AuthorId = User.Identity.GetUserId(),
-                DateTime = DateTime.Parse(string.Format("{0} {1}", viewModel.Date, viewModel.Time)),
+                DateTime = viewModel.DateTime,
                 GenreId = viewModel.Genre,
                 Title = viewModel.Title,
                 Description = viewModel.Description

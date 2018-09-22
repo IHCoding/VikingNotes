@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using VikingNotes.Models;
 
 namespace VikingNotes.ViewModels
@@ -18,5 +19,10 @@ namespace VikingNotes.ViewModels
         public string Description { get; set; }
 
         public IEnumerable<Genre> Genres { get; set; } // for the 2nd argument of the DropDownListFor in the Create.cshtml there is needed a source for it.
+
+        public DateTime DateTime
+        {
+            get { return DateTime.Parse(string.Format("{0} {1}", Date, Time)); }
+        }
     }
 }
