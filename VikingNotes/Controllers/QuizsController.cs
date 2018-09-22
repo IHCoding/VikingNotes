@@ -36,6 +36,14 @@ namespace VikingNotes.Controllers
                 // Implementing the Create action for the Target form in the Create.cshtml
         public ActionResult Create(QuizFormViewModel viewModel) // takes parameter of QuizFormViewModel -- the model behind the view. When posting the form will result this action
         {
+            // step : validation
+            if (!ModelState.IsValid) // is property of the controller.
+            {
+                return View("Create", viewModel); // return create viewe, using the viewModel past to this method
+                    // when returning the view, all the existing values displayed in the input fields along with validation messages.
+            }
+
+
                  // creating new Quiz object and converting it to the viewModel object
             var quiz = new Quiz
             {
