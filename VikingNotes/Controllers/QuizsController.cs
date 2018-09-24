@@ -39,6 +39,9 @@ namespace VikingNotes.Controllers
             // step : validation
             if (!ModelState.IsValid) // is property of the controller.
             {
+                // step exception fix for Genre not populated - Value cannot be null
+                viewModel.Genres = Context.Genres.ToList();
+
                 return View("Create", viewModel); // return create viewe, using the viewModel past to this method
                     // when returning the view, all the existing values displayed in the input fields along with validation messages.
             }
@@ -49,7 +52,7 @@ namespace VikingNotes.Controllers
             {
                  // need to set the authorId, need an applicationUser object
                 AuthorId = User.Identity.GetUserId(),
-                DateTime = viewModel.DateTime,
+                DateTime = viewModel.GetDateTime(),
                 GenreId = viewModel.Genre,
                 Title = viewModel.Title,
                 Description = viewModel.Description
