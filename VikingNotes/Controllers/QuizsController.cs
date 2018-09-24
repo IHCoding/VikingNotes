@@ -1,5 +1,4 @@
 ﻿using Microsoft.AspNet.Identity;
-using System;
 using System.Linq;
 using System.Web.Mvc;
 using System.Web.UI.WebControls;
@@ -31,9 +30,9 @@ namespace VikingNotes.Controllers
         }
 
 
-        
-        [Authorize, HttpPost] // httpPost to prompt this action being called only by a httpPost method
-                // Implementing the Create action for the Target form in the Create.cshtml
+
+        [Authorize, HttpPost, ValidateAntiForgeryToken] // httpPost to prompt this action being called only by a httpPost method
+                                                        // Implementing the Create action for the Target form in the Create.cshtml
         public ActionResult Create(QuizFormViewModel viewModel) // takes parameter of QuizFormViewModel -- the model behind the view. When posting the form will result this action
         {
             // step : validation
@@ -43,14 +42,14 @@ namespace VikingNotes.Controllers
                 viewModel.Genres = Context.Genres.ToList();
 
                 return View("Create", viewModel); // return create viewe, using the viewModel past to this method
-                    // when returning the view, all the existing values displayed in the input fields along with validation messages.
+                                                  // when returning the view, all the existing values displayed in the input fields along with validation messages.
             }
 
 
-                 // creating new Quiz object and converting it to the viewModel object
+            // creating new Quiz object and converting it to the viewModel object
             var quiz = new Quiz
             {
-                 // need to set the authorId, need an applicationUser object
+                // need to set the authorId, need an applicationUser object
                 AuthorId = User.Identity.GetUserId(),
                 DateTime = viewModel.GetDateTime(),
                 GenreId = viewModel.Genre,
