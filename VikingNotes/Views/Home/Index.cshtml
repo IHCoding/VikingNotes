@@ -1,9 +1,18 @@
 ﻿<!DOCTYPE html>
+<head>
+    @*commented out the bootstrap as the css is being used instead.*@
+    @*<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">*@
 
+    <link a href="IndexStyleSheet.css" type="text/css"
+          runat="server"/>
 
-<link a href="IndexStyleSheet.css" type="text/css"
-      runat="server" />
+    <style>
+        .flex-container {
+            display: flex;
+        }
+    </style>
 
+</head>
 <body>
 
 
@@ -12,73 +21,87 @@
         ViewBag.Title = "Home Page";
     }
 
-<div class="jumbotron">
-    <h3><center> VIKINGNOTES </center> </h3>
+    <div class="jumbotron">
+        <h3><center> VIKINGNOTES </center> </h3>
 
-    <h8>
-        Velkommen tilbage efter sommerferien!
+        <h8>
+            Velkommen tilbage efter sommerferien!
 
-        Medicinstudiet er et af de hårdeste studier. Vi håber på at vi gennem platformen kan styrke den kollegiale ånd blandt medicinstuderende og hjælpe hinanden.
+            Medicinstudiet er et af de hårdeste studier. Vi håber på at vi gennem platformen kan styrke den kollegiale ånd blandt medicinstuderende og hjælpe hinanden.
 
-        Vi lever af alt jeres tilsendte materiale, og I kan takke hinanden! Vi har ordnet det hele i mapperne under de enkelte semestre.
-        Siden vil løbende blive opdateret med integration af video- samt andet undervisningsmateriale - bare skriv forslag, så ordner vi det.
-        God fornøjelse! Mvh Sardam Wahab og Johannes Rasmussen, 11. semester.
-    </h8>
-</div>
-    
-
-<div class="container-fluid" >
-    <div class="col-md-3">
-        <p> <a href="www.google.com"> <img src="../../Image/semester1.png" > </a> </p>
+            Vi lever af alt jeres tilsendte materiale, og I kan takke hinanden! Vi har ordnet det hele i mapperne under de enkelte semestre.
+            Siden vil løbende blive opdateret med integration af video- samt andet undervisningsmateriale - bare skriv forslag, så ordner vi det.
+            God fornøjelse! Mvh Sardam Wahab og Johannes Rasmussen, 11. semester.
+        </h8>
     </div>
-    <div class="col-md-3">    <img  src="../../Image/semester2.png" />
-    </div>
-    <div class="col-md-3">    <img src="../../Image/semester3.png" />
-    </div>
-    <div class="col-md-3">    <img src="../../Image/semester4.png" />
-    </div>
-    <div class="col-md-3">    <img src="../../Image/semester5.png" />
-    </div>
-    <div class="col-md-3">    <img src="../../Image/semester6.png" />
-    </div>
-    <div class="col-md-3">   <img src="../../Image/semester7.png" />
-    </div>
-    <div class="col-md-3">    <img src="../../Image/semester8.png" />
-    </div>
-    <div class="col-md-3">    <img src="../../Image/semester9.png" />
-    </div>
-    <div class="col-md-3">    <img src="../../Image/semester10.png" width="250" height="200" />
-    </div>
-    <div class="col-md-3">    <img src="../../Image/semester11.png" />
-    </div>
-    <div class="col-md-3">    <img src="../../Image/semester12.png" />
-    </div>
-    <div class="col-md-3">    <img src="../../Image/kbu.png" />
-</div>
-    
-
-</div> 
 
 
-
-        <style type="text/css"> 
-            
-            .Semesters {
-                background-color: crimson;
-                }
-
-            div.col-md-3 {
-                margin-left: 4px;
-            }
+    <div class="flex-container">
+        <div class="row" >
 
 
-        </style>
+            <div class="col-md-3" padding="10,10">
+                <p> <a href="www.google.com"> <img src="../../Image/semester1.png" margin="10"> </a> </p>
+            </div>
+            <div class="col-md-3">
+                <img src="../../Image/semester2.png"  margin="10"/>
+            </div>
+            <div class="col-md-3">
+                <img src="../../Image/semester3.png"  margin="10"/>
+            </div>
+            <div class="col-md-3">
+                <img src="../../Image/semester4.png" margin="10"/>
+            </div>
+            <div class="col-md-3">
+                <img src="../../Image/semester5.png" margin="10"/>
+            </div>
+            <div class="col-md-3">
+                <img src="../../Image/semester6.png" margin="10" />
+            </div>
+            <div class="col-md-3">
+                <img src="../../Image/semester7.png" margin="10" />
+            </div>
+            <div class="col-md-3">
+                <img src="../../Image/semester8.png" margin="10" />
+            </div>
+            <div class="col-md-3">
+                <img src="../../Image/semester9.png" margin="10" />
+            </div>
+            <div class="col-md-3">
+                <img src="../../Image/semester10.png" width="250" height="200" margin="10" />
+            </div>
+            <div class="col-md-3">
+                <img src="../../Image/semester11.png"  margin="10"/>
+            </div>
+            <div class="col-md-3">
+                <img src="../../Image/semester12.png" margin="10" />
+            </div>
+            <div class="col-md-3">
+                <img src="../../Image/kbu.png"  margin="10"/>
+            </div>
+
+        </div>
+
+    </div>
+    <style type="text/css">
+
+        .Semesters {
+            background-color: crimson;
+        }
+
+       
+        
+    </style>
 
 
-@*<footer>
-    <p>&copy; @DateTime.Now.Year - All Rights Reserved To VikingNotes</p>
-</footer>*@
+    <footer>
+            <p>&copy; @DateTime.Now.Year - All Rights Reserved To VikingNotes</p>
+        </footer>
 
-   
+
+    @*<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>*@
+
 </body>
 </html>
