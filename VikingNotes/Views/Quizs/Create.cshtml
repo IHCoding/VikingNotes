@@ -8,16 +8,17 @@
 
 @using (Html.BeginForm("Create", "Quizs"))
 {
+    <p class="alert alert-info"> All fields are<strong> required</strong>. </p>
     @Html.AntiForgeryToken()
     <div class="form-group">
         @Html.LabelFor(m => m.Title)
-        @Html.TextBoxFor(m => m.Title, new { @class = "form-control" })
+        @Html.TextBoxFor(m => m.Title, new { @class = "form-control" , autofocus="autofocus"})
         @Html.ValidationMessageFor(m=>m.Title)
     </div>
 
     <div class="form-group">
         @Html.LabelFor(m => m.Author)
-        @Html.TextBoxFor(m => m.Author, new { @class = "form-control" })
+        @Html.TextBoxFor(m => m.Author, new { @class = "form-control", placeholder="Barak Obama" }) 
         @*@Html.ValidationMessageFor(m=>m.Author)*@
     </div>
 
@@ -33,13 +34,13 @@
 
     <div class="form-group">
         @Html.LabelFor(m => m.Date)
-        @Html.TextBoxFor(m => m.Date, new { @class = "form-control" })
+        @Html.TextBoxFor(m => m.Date, new { @class = "form-control", placeholder="1 Jan 2019" })
         @Html.ValidationMessageFor(m=>m.Date)
     </div>
 
     <div class="form-group">
         @Html.LabelFor(m => m.Time)
-        @Html.TextBoxFor(m => m.Time, new { @class = "form-control" })
+        @Html.TextBoxFor(m => m.Time, new { @class = "form-control", placeholder="24:00" })
         @Html.ValidationMessageFor(m=>m.Time)
     </div>
 
