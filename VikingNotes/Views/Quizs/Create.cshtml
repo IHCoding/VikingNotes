@@ -45,8 +45,9 @@
 
     <div class="form-group">
         @Html.LabelFor(m => m.Description)
-        @Html.TextBoxFor(m => m.Description, new { @class = "form-control" })
-        @Html.ValidationMessageFor(m=>m.Description)
+       @* @Html.TextBoxFor(m => m.Description, new { @class = "form-control" })*@
+          <textarea class="form-control" rows="3" id="Description"></textarea>
+          @Html.ValidationMessageFor(m=>m.Description)
     </div>
     
     <button type="submit" class="btn btn-primary">Save</button>
